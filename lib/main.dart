@@ -1,3 +1,4 @@
+import 'package:digestdraft/Screens/MainScreens/MainScreen.dart';
 import 'package:digestdraft/Screens/MainScreens/home.dart';
 import 'package:digestdraft/dummy/data1.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HomeScreen(data: Data1()),
+      home: const MainScreen(),
     );
   }
 }

@@ -18,18 +18,9 @@ class ArticleDetails2 extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       body: SizedBox(
-        height: MediaQuery.of(context).size.height,
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              TitleWidget(data: title),
-              ImageWidget(url: url),
-              IntroWidget(data: intro),
-              MarkdownWidget(data: data),
-            ],
-          ),
-        ),
-      ),
+          height: MediaQuery.of(context).size.height,
+          child: MarkdownWidget(
+              physics: const BouncingScrollPhysics(), data: data)),
     );
   }
 }

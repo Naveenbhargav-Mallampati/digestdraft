@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:digestdraft/Screens/profileScreens/constants.dart';
 
 class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({Key? key, required this.title}) : super(key: key);
-  final String title;
+  const ProfileScreen({
+    Key? key,
+  }) : super(key: key);
 
   @override
   _ProfilePageState createState() => _ProfilePageState();
