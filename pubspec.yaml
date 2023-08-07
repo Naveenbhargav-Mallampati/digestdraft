@@ -41,7 +41,7 @@ dependencies:
   flutter_svg: ^2.0.7
   line_icons: ^2.0.3
   salomon_bottom_bar: ^3.3.2
-  searchable_listview: ^2.4.0
+  pagination_view: ^2.0.0
   pocketbase: ^0.13.0
   riverpod: ^2.3.6
 

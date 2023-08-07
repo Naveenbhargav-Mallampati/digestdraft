@@ -64,7 +64,13 @@ class ImageViewState extends State<ImageView> {
           width: MediaQuery.of(context).size.width / 3,
           height: MediaQuery.of(context).size.height / 4,
           fit: BoxFit.cover,
-          placeholder: (context, url) => const CircularProgressIndicator(),
+          placeholder: (context, url) {
+            return const Center(
+              child: CircularProgressIndicator(
+                strokeWidth: 1.0,
+              ),
+            );
+          },
           errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
       ),
