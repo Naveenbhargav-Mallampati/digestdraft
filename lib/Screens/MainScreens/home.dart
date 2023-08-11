@@ -1,7 +1,6 @@
 import 'package:digestdraft/Components/HomeTile.dart';
 import 'package:digestdraft/Screens/MainScreens/ArticleDetails2.dart';
 import 'package:digestdraft/controllers/homeController.dart';
-import 'package:digestdraft/dummy/markdowns.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:digestdraft/dummy/data1.dart';
@@ -27,8 +26,8 @@ class HomeScreen extends ConsumerWidget {
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return ArticleDetails2(
-                          data: Markdowns().data.first,
+                        return ArticleDetailScreen(
+                          data: ArticlesView.items![index].body!,
                           title: ArticlesView.items![index].heading!,
                           intro: ArticlesView.items![index].intro!,
                           url: ArticlesView.items![index].url!,

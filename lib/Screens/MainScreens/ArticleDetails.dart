@@ -1,15 +1,15 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
-class ArticleDetailsScreen extends StatefulWidget {
+class ArticleDetails extends StatefulWidget {
   final String image;
-  const ArticleDetailsScreen({Key? key, required this.image}) : super(key: key);
+  const ArticleDetails({Key? key, required this.image}) : super(key: key);
 
   @override
   _MagazineDetailPageState createState() => _MagazineDetailPageState();
 }
 
-class _MagazineDetailPageState extends State<ArticleDetailsScreen> {
+class _MagazineDetailPageState extends State<ArticleDetails> {
   double expandedHeight = 800;
   double toolBarHeight = 50;
   double height = 150;
