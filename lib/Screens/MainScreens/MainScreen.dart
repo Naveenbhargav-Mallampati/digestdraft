@@ -52,7 +52,7 @@ class _nameState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: index == 0
-          ? HomeScreen(data: Data1())
+          ? const HomeScreen()
           : index == 1
               ? const CategoryScreen()
               : index == 2

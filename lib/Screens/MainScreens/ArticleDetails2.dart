@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:digestdraft/controllers/articleController.dart';
 import 'package:digestdraft/controllers/homeController.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -39,27 +40,24 @@ class ArticleDetails2 extends ConsumerState<ArticleDetailScreen> {
 
   final timer = Stopwatch();
 
+  ReachMetrics? reachget;
+
   TocController readcontroller = TocController();
   final ItemScrollController itemScrollController = ItemScrollController();
   final ItemPositionsListener itemPositionsListener =
       ItemPositionsListener.create();
-
   @override
   void initState() {
     super.initState();
-
+    timer.start();
     itemPositionsListener.itemPositions.addListener(() {
       final position = itemPositionsListener.itemPositions.value.first;
-      print(position.toString());
-
-      ///TODO:record the index
+      index = position.index;
     });
-    timer.start();
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     print(timer.elapsed);
     timer.stop();
@@ -70,44 +68,75 @@ class ArticleDetails2 extends ConsumerState<ArticleDetailScreen> {
     BuildContext context,
   ) {
     final markdown = ref.watch(BodyProvider(data));
-    return Scaffold(
-        body: SizedBox(
-            height: MediaQuery.of(context).size.height,
-            child: markdown.when(
-              data: (data) {
-                /*
-                  MarkdownWidget(
-                    tocController: readcontroller,
-                    physics: const BouncingScrollPhysics(),
-                    data: data.markdown!)
-                */
-                final markdownList =
-                    MarkdownGenerator().buildWidgets(data.markdown!);
-                print(markdownList.length);
-                return ScrollablePositionedList.builder(
-                  itemCount: markdownList.length,
-                  itemScrollController: itemScrollController,
-                  itemPositionsListener: itemPositionsListener,
-                  itemBuilder: (context, index) {
-                    return markdownList[index];
-                  },
-                );
-              },
-              error: (error, stackTrace) {
-                return Center(
-                  child: Container(
-                    child: Text(error.toString()),
-                  ),
-                );
-              },
-              loading: () {
-                return const Center(
-                  child: CircularProgressIndicator(
-                    strokeWidth: 1.0,
-                  ),
-                );
-              },
-            )));
+
+    return WillPopScope(
+      onWillPop: _onWillPop,
+      child: Scaffold(
+          body: SizedBox(
+              height: MediaQuery.of(context).size.height,
+              child: markdown.when(
+                data: (data) {
+                  final out = ref.watch(reachgetprovider(data.id!));
+                  out.when(
+                    data: (data) {
+                      reachget = data;
+                    },
+                    error: (error, stackTrace) => null,
+                    loading: () => null,
+                  );
+                  /*
+                    MarkdownWidget(
+                      tocController: readcontroller,
+                      physics: const BouncingScrollPhysics(),
+                      data: data.markdown!)
+                  */
+                  final markdownList =
+                      MarkdownGenerator().buildWidgets(data.markdown!);
+
+                  print(markdownList.length);
+                  return ScrollablePositionedList.builder(
+                    itemCount: markdownList.length,
+                    itemScrollController: itemScrollController,
+                    itemPositionsListener: itemPositionsListener,
+                    itemBuilder: (context, index) {
+                      return markdownList[index];
+                    },
+                  );
+                },
+                error: (error, stackTrace) {
+                  return Center(
+                    child: Container(
+                      child: Text(error.toString()),
+                    ),
+                  );
+                },
+                loading: () {
+                  return const Center(
+                    child: CircularProgressIndicator(
+                      strokeWidth: 1.0,
+                    ),
+                  );
+                },
+              ))),
+    );
+  }
+
+  Future<bool> _onWillPop() async {
+    bool value = true;
+    final time = timer.elapsed.inMinutes;
+    Map<String, dynamic> body = {};
+    body['time'] = time;
+    body['index'] = index;
+    body['metrics'] = reachget;
+    final out = ref.watch(reachprovider(body));
+    out.when(data: (data) {
+      value = true;
+    }, error: (error, stack) {
+      value = false;
+    }, loading: () {
+      return null;
+    });
+    return value;
   }
 
   Widget BuildToc() {

@@ -6,8 +6,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:digestdraft/dummy/data1.dart';
 
 class HomeScreen extends ConsumerWidget {
-  HomeScreen({super.key, required this.data});
-  Data1 data;
+  const HomeScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

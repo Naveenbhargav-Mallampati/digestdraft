@@ -1,3 +1,5 @@
+import 'package:digestdraft/Screens/MainScreens/home.dart';
+import 'package:digestdraft/controllers/homeController.dart';
 import 'package:digestdraft/utils/static_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -20,7 +22,13 @@ class CategoryScreen extends ConsumerWidget {
                 itemBuilder: ((context, index) {
                   return InkWell(
                     onTap: () {
-                      print(index);
+                      ref.read(queryprovider.state).state['category'] =
+                          StaticData.categories[index].title;
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          return const HomeScreen();
+                        },
+                      ));
                     },
                     child: Container(
                         height: MediaQuery.of(context).size.width - 20,

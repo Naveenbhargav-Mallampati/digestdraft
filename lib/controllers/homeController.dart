@@ -1,27 +1,32 @@
 import 'package:digestdraft/controllers/accountController.dart';
 import 'package:digestdraft/models/ArticleView.dart';
-import 'package:pocketbase/pocketbase.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:pocketbase/pocketbase.dart';
 
-final HomeDataProvider = FutureProvider((ref) {
+final HomeDataProvider = FutureProvider<ArticlesView>((ref) {
   PocketBase pb = ref.read(clientprovider);
   return HomeApi.GetArticles(pb);
 });
 
+final queryprovider = StateProvider((ref) {
+  Map<String, String> query = {'read': '1'};
+  return query;
+});
 final BodyProvider = FutureProvider.family<Body, String>((ref, id) {
   PocketBase pb = ref.read(clientprovider);
   return HomeApi.GetBody(id, pb);
 });
 
 class HomeApi {
-  static Future<ArticlesView> GetArticles(PocketBase pb) async {
+  static Future<ArticlesView> GetArticles(PocketBase pb,
+      {Map<String, dynamic> queries = const {'read': '1'}}) async {
     // fetch a paginated records list
     final resultList = await pb.collection('articles').getList(
-      page: 1,
-      perPage: 10,
-      sort: '-created',
-      query: {'read': '1'},
-    );
+          page: 1,
+          perPage: 10,
+          sort: '-created',
+          query: queries,
+        );
     return ArticlesView.fromJson(resultList.toJson());
   }
 
