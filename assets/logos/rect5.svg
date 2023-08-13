@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="37.510029mm"
+   height="35.459763mm"
+   viewBox="0 0 37.510029 35.459763"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="d2.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2"
+     inkscape:cx="274.75"
+     inkscape:cy="482.25"
+     inkscape:window-width="1920"
+     inkscape:window-height="1051"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-22.896334,-97.859853)">
+    <rect
+       style="fill:#2f6545;fill-opacity:1;fill-rule:evenodd;stroke-width:4.1153;stroke-linecap:square;stroke-dashoffset:188.976;paint-order:fill markers stroke"
+       id="rect1-0"
+       width="37.510029"
+       height="35.459759"
+       x="22.896334"
+       y="97.859856"
+       inkscape:export-filename="rect3.svg"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:47.5873px;line-height:1.25;font-family:'Winslow Book';-inkscape-font-specification:'Winslow Book, Heavy';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#efeeee;fill-opacity:1;stroke:none;stroke-width:0.24785"
+       x="24.284784"
+       y="131.60054"
+       id="text1-73"
+       transform="scale(1.0053218,0.99470638)"><tspan
+         sodipodi:role="line"
+         id="tspan1-1"
+         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:47.5873px;font-family:'Winslow Book';-inkscape-font-specification:'Winslow Book, Heavy';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#efeeee;fill-opacity:1;stroke-width:0.24785"
+         x="24.284784"
+         y="131.60054">D</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:300;font-stretch:normal;font-size:7.30112px;line-height:1.25;font-family:'Winslow Book';-inkscape-font-specification:'Winslow Book, Light Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#2f6545;fill-opacity:1;stroke:none;stroke-width:0.182528"
+       x="43.265175"
+       y="115.02567"
+       id="text2-0"
+       transform="scale(1.0836358,0.92281926)"><tspan
+         sodipodi:role="line"
+         id="tspan2-0"
+         style="font-style:italic;font-variant:normal;font-weight:300;font-stretch:normal;font-size:7.30112px;font-family:'Winslow Book';-inkscape-font-specification:'Winslow Book, Light Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#2f6545;fill-opacity:1;stroke-width:0.182528"
+         x="43.265175"
+         y="115.02567">2</tspan></text>
+  </g>
+</svg>

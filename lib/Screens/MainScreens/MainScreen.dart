@@ -1,7 +1,6 @@
 import 'package:digestdraft/Screens/MainScreens/caterogiesScreen.dart';
 import 'package:digestdraft/Screens/MainScreens/home.dart';
 import 'package:digestdraft/Screens/profileScreens/ProfileScreen.dart';
-import 'package:digestdraft/dummy/data1.dart';
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
@@ -52,7 +51,9 @@ class _nameState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: index == 0
-          ? const HomeScreen()
+          ? HomeScreen(
+              cat: false,
+            )
           : index == 1
               ? const CategoryScreen()
               : index == 2

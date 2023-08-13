@@ -65,7 +65,7 @@ class StaticData {
     ),
     Category(
       id: 10,
-      title: "Technology",
+      title: "Tech",
       icon: SvgPicture.asset("assets/svg/technology.svg"),
     ),
   ];

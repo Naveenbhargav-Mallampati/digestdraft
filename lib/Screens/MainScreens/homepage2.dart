@@ -4,22 +4,15 @@ import 'package:digestdraft/controllers/homeController.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class HomeScreen extends ConsumerWidget {
-  HomeScreen({super.key, required this.cat});
-  bool cat;
-
+class HomePage2 extends ConsumerWidget {
+  HomePage2({
+    super.key,
+    required this.filter,
+  });
+  String filter;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // final filter = ref.watch(queryprovider.notifier).addListener((state) {
-    //   if (cat) {
-    //     dataref = ref.watch(HomeCategoryProvider);
-    //   } else {
-    //     dataref = ref.watch(HomeDataProvider);
-    //   }
-    // });
-
-    final dataref = ref.watch(HomeDataProvider);
-
+    final dataref = ref.watch(HomeCategoryProvider(filter));
     return Scaffold(
       backgroundColor: Colors.white.withAlpha(240),
       body: SizedBox(

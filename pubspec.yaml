@@ -88,6 +88,43 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+  fonts:
+    - family: winslow
+      fonts:
+        - asset: assets/fonts/winslow-book/WinslowBook-Black.otf
+        - asset: assets/fonts/winslow-book/WinslowBook-BlackItalic.otf
+        - asset: assets/fonts/winslow-book/WinslowBook-Bold.otf
+        - asset: assets/fonts/winslow-book/WinslowBook-BoldItalic.otf
+        - asset: assets/fonts/winslow-book/WinslowBook-Hairline.otf
+        - asset: assets/fonts/winslow-book/WinslowBook-HairlineItalic.otf
+        - asset: assets/fonts/winslow-book/WinslowBook-Light.otf
+        - asset: assets/fonts/winslow-book/WinslowBook-LightItalic.otf
+        - asset: assets/fonts/winslow-book/WinslowBook-Regular.otf
+        - asset: assets/fonts/winslow-book/WinslowBook-RegularItalic.otf
+        - asset: assets/fonts/winslow-book/WinslowBook-SemiBold.otf
+        - asset: assets/fonts/winslow-book/WinslowBook-SemiBoldItalic.otf
+    
+    - family: poppins
+      fonts:
+        - asset: assets/fonts/poppins/Poppins-Black.otf
+        - asset: assets/fonts/poppins/Poppins-BlackItalic.otf
+        - asset: assets/fonts/poppins/Poppins-Bold.otf
+        - asset: assets/fonts/poppins/Poppins-BoldItalic.otf
+        - asset: assets/fonts/poppins/Poppins-ExtraLight.otf
+        - asset: assets/fonts/poppins/Poppins-ExtraLightItalic.otf
+        - asset: assets/fonts/poppins/Poppins-ExtraBold.otf
+        - asset: assets/fonts/poppins/Poppins-ExtraBoldItalic.otf 
+        - asset: assets/fonts/poppins/Poppins-Italic.otf
+        - asset: assets/fonts/poppins/Poppins-Light.otf
+        - asset: assets/fonts/poppins/Poppins-Medium.otf
+        - asset: assets/fonts/poppins/Poppins-LightItalic.otf
+        - asset: assets/fonts/poppins/Poppins-MediumItalic.otf
+        - asset: assets/fonts/poppins/Poppins-Regular.otf
+        - asset: assets/fonts/poppins/Poppins-SemiBold.otf
+        - asset: assets/fonts/poppins/Poppins-SemiBoldItalic.otf
+        - asset: assets/fonts/poppins/Poppins-Thin.otf
+        - asset: assets/fonts/poppins/Poppins-ThinItalic.otf
+
   # fonts:
   #   - family: Schyler
   #     fonts:
