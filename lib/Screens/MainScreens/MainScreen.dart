@@ -1,5 +1,6 @@
 import 'package:digestdraft/Screens/MainScreens/caterogiesScreen.dart';
 import 'package:digestdraft/Screens/MainScreens/home.dart';
+import 'package:digestdraft/Screens/MainScreens/magazines.dart';
 import 'package:digestdraft/Screens/profileScreens/ProfileScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
@@ -31,11 +32,11 @@ class _nameState extends State<MainScreen> {
           style: TextStyle(fontSize: 12.0),
         )),
     SalomonBottomBarItem(
-        icon: const Icon(Icons.search),
+        icon: const Icon(Icons.book),
         selectedColor: Colors.green.shade200,
         unselectedColor: Colors.black,
         title: const Text(
-          'Search',
+          'Editions',
           style: TextStyle(fontSize: 12.0),
         )),
     SalomonBottomBarItem(
@@ -57,7 +58,7 @@ class _nameState extends State<MainScreen> {
           : index == 1
               ? const CategoryScreen()
               : index == 2
-                  ? const CategoryScreen()
+                  ? const MagazinesScreen()
                   : const ProfileScreen(),
       bottomNavigationBar: SalomonBottomBar(
           currentIndex: index,
