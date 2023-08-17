@@ -194,16 +194,16 @@ class ProfileListItems extends StatelessWidget {
       child: ListView(
         children: const <Widget>[
           ProfileListItem(
+            icon: Icons.bookmark,
+            text: 'Saved Articles',
+          ),
+          ProfileListItem(
             icon: Icons.verified_user_outlined,
             text: 'Privacy',
           ),
           ProfileListItem(
             icon: Icons.history,
             text: 'Purchase History',
-          ),
-          ProfileListItem(
-            icon: Icons.question_mark,
-            text: 'Help & Support',
           ),
           ProfileListItem(
             icon: Icons.settings,
@@ -213,11 +213,11 @@ class ProfileListItems extends StatelessWidget {
             icon: Icons.share,
             text: 'Invite a Friend',
           ),
-          ProfileListItem(
-            icon: Icons.logout,
-            text: 'Logout',
-            hasNavigation: false,
-          ),
+          // ProfileListItem(
+          //   icon: Icons.logout,
+          //   text: 'Logout',
+          //   hasNavigation: false,
+          // ),
         ],
       ),
     );

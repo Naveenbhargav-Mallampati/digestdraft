@@ -1,6 +1,4 @@
-import 'package:digestdraft/Screens/MainScreens/MainScreen.dart';
-import 'package:digestdraft/Screens/MainScreens/home.dart';
-import 'package:digestdraft/dummy/data1.dart';
+import 'package:digestdraft/Screens/onboarding/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -19,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MainScreen(),
+      home: SignupScreen(),
     );
   }
 }

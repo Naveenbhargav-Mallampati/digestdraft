@@ -1,10 +1,15 @@
+import 'package:digestdraft/Screens/onboarding/login.dart';
 import 'package:digestdraft/config/styling.dart';
+import 'package:digestdraft/controllers/onboarding/onBoardingController.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SignupScreen extends ConsumerWidget {
-  const SignupScreen({super.key});
+  SignupScreen({super.key});
+
+  String Email = '';
+  String password = '';
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -25,17 +30,42 @@ class SignupScreen extends ConsumerWidget {
                   ),
 
                   //email & password section
-                  emailTextField(size),
+                  emailTextField(size, (value) {
+                    Email = value;
+                  }),
                   SizedBox(
                     height: size.height * 0.02,
                   ),
-                  passwordTextField(size),
+                  passwordTextField(size, (value) {
+                    password = value;
+                  }),
                   SizedBox(
                     height: size.height * 0.03,
                   ),
 
                   //sign in button & sign in with text
-                  signInButton(size, 'Signup'),
+                  InkWell(
+                      onTap: () {
+                        final result = ref.watch(signupprovider({
+                          'email': Email,
+                          'password': password,
+                          'passwordConfirm': password
+                        }));
+                        result.when(
+                            data: (data) {
+                              print(data);
+                              Navigator.push(context, MaterialPageRoute(
+                                builder: (context) {
+                                  return SigninScreen();
+                                },
+                              ));
+                            },
+                            error: (er, stack) {
+                              print(er);
+                            },
+                            loading: () {});
+                      },
+                      child: signInButton(size, 'Signup')),
                   SizedBox(
                     height: size.height * 0.02,
                   ),
@@ -46,7 +76,7 @@ class SignupScreen extends ConsumerWidget {
                   InkWell(
                     onTap: () {},
                     child: SignInOneSocialButton(
-                      iconPath: "assets/google_logo.svg",
+                      iconPath: "assets/svg/google_logo.svg",
                       text: "Sign up with Google",
                     ),
                   ),
@@ -68,7 +98,7 @@ class SignupScreen extends ConsumerWidget {
     );
   }
 
-  static Widget emailTextField(Size size) {
+  static Widget emailTextField(Size size, Function callback) {
     return Container(
       alignment: Alignment.center,
       height: size.height / 11,
@@ -82,6 +112,9 @@ class SignupScreen extends ConsumerWidget {
       ),
       child: TextField(
         style: TextStyles().paraStyle,
+        onChanged: (value) {
+          callback(value);
+        },
         maxLines: 1,
         cursorColor: const Color(0xFF15224F),
         decoration: InputDecoration(
@@ -92,7 +125,7 @@ class SignupScreen extends ConsumerWidget {
     );
   }
 
-  static Widget passwordTextField(Size size) {
+  static Widget passwordTextField(Size size, Function callback) {
     return Container(
       alignment: Alignment.center,
       height: size.height / 11,
@@ -106,6 +139,9 @@ class SignupScreen extends ConsumerWidget {
       ),
       child: TextField(
         style: TextStyles().paraStyle,
+        onChanged: (value) {
+          callback(value);
+        },
         maxLines: 1,
         obscureText: true,
         keyboardType: TextInputType.visiblePassword,
